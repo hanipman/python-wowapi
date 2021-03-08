@@ -69,7 +69,7 @@ class WowApi(GameDataMixin, ProfileMixin):
 
         now = self._utcnow()
         try:
-            response = self._session.get(url)
+            response = self._session.post(url)
         except RequestException as exc:
             logger.exception(str(exc))
             raise WowApiOauthException(str(exc))
